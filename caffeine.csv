@@ -1,0 +1,241 @@
+"","Soda","Brand","Formulation","Restaurant","Caffeine"
+"1","Coca-Cola","Coke","Regular","Red Lobster",47.32
+"2","Coca-Cola","Coke","Regular","Red Lobster",43.78
+"3","Coca-Cola","Coke","Regular","Red Lobster",48.12
+"4","Coca-Cola","Coke","Regular","Red Lobster",43.25
+"5","Coca-Cola","Coke","Regular","Red Lobster",46.42
+"6","Coca-Cola","Coke","Regular","Red Lobster",45.16
+"7","Coca-Cola","Coke","Regular","Red Lobster",45.17
+"8","Coca-Cola","Coke","Regular","Red Lobster",42.48
+"9","Coca-Cola","Coke","Regular","Red Lobster",47.7
+"10","Coca-Cola","Coke","Regular","Red Lobster",36.62
+"11","Coke","Coke","Regular","Applebees",39.06
+"12","Coke","Coke","Regular","Applebees",34.59
+"13","Coca-Cola","Coke","Regular","Applebees",45.96
+"14","Coca-Cola","Coke","Regular","Applebees",41.19
+"15","Coca-Cola","Coke","Regular","Applebees",35.81
+"16","Coca-Cola","Coke","Regular","Applebee's",32.56
+"17","Coca-Cola","Coke","Regular","Applebees",40.06
+"18","Coca-Cola","Coke","Regular","Applebees",42.09
+"19","Coca-Cola","Coke","Regular","Applebees",39.3
+"20","Coca-Cola","Coke","Regular","Applebees",40.37
+"21","Coca-Cola","Coke","Regular","McDonalds",41.92
+"22","Coca-Cola","Coke","Regular","McDonald's",40.9
+"23","Coca-Cola","Coke","Regular","McDonalds",38.43
+"24","Coca-Cola","Coke","Regular","McDonald's",34.09
+"25","Coca-Cola","Coke","Regular","MacDonald's",38.81
+"26","Coca-Cola","Coke","Regular","McDonald's",40
+"27","Coca-Cola","Coke","Regular","McDonald's",38.9
+"28","Coca-Cola","Coke","Regular","McDonald's",40.38
+"29","Coca-Cola","Coke","Regular","McDonald's",32.98
+"30","Coca-Cola","Coke","Regular","McDonald's",35.59
+"31","Coca-Cola","Coke","Regular","Burger King",44
+"32","Coca-Cola","Coke","Regular","Burger King",34.85
+"33","Coke","Coke","Regular","Burger King",33.41
+"34","Coca-Cola","Coke","Regular","Burger King",30.56
+"35","Coke","Coke","Regular","Burger King",37.94
+"36","Coca-Cola","Coke","Regular","Burger King",29.38
+"37","Coca-Cola","Coke","Regular","Burger King",37.03
+"38","Coca-Cola","Coke","Regular","Burger King",34
+"39","Coca-Cola","Coke","Regular","Burger King",35.4
+"40","Coca-Cola","Coke","Regular","Burger King",33.44
+"41","Coca-Cola","Coke","Regular","Hardee's",33.04
+"42","Coca-Cola","Coke","Regular","Hardee's",33.55
+"43","Coca-Cola","Coke","Regular","Hardee's",35.91
+"44","Coca-Cola","Coke","Regular","Hardee's",36.81
+"45","Coca-Cola","Coke","Regular","Hardee's",32.04
+"46","Coca-Cola","Coke","Regular","Hardee's",32.3
+"47","Coca-Cola","Coke","Regular","Hardee's",29.93
+"48","Coca-Cola","Coke","Regular","Hardee's",28.43
+"49","Coca-Cola","Coke","Regular","Hardee's",35.34
+"50","Coca-Cola","Coke","Regular","Hardee's",30.64
+"51","Diet Coke","Coke","Diet","Red Lobster",44.6
+"52","Diet Coke","Coke","Diet","Red Lobster",45.66
+"53","Diet Coke","Coke","Diet","Red Lobster",46.37
+"54","Diet Coke","Coke","Diet","Red Lobster",48.11
+"55","Diet Coke","Coke","Diet","Red Lobster",48.47
+"56","Diet Coke","Coke","Diet","Red Lobster",45.91
+"57","Diet Coke","Coke","Diet","Red Lobster",47.91
+"58","Diet Coke","Coke","Diet","Red Lobster",48.25
+"59","Diet Coke","Coke","Diet","Red Lobster",47.26
+"60","Diet Coke","Coke","Diet","Red Lobster",47.47
+"61","Diet Coke","Coke","Diet","Applebees",41.07
+"62","Diet Coke","Coke","Diet","Applebees",42.55
+"63","Diet Coke","Coke","Diet","Applebees",41.27
+"64","Diet Coke","Coke","Diet","Applebees",47.52
+"65","Diet Coke","Coke","Diet","Applebees",46
+"66","Diet Coke","Coke","Diet","Applebees",46.99
+"67","Diet Coke","Coke","Diet","Applebees",49.12
+"68","Diet Coke","Coke","Diet","Applebees",41.27
+"69","Diet Coke","Coke","Diet","Applebees",43.8
+"70","Diet Coke","Coke","Diet","Applebees",44.39
+"71","Diet Coke","Coke","Diet","McDonalds",39.71
+"72","Diet Coke","Coke","Diet","McDonalds",44.35
+"73","Diet Coke","Coke","Diet","McDonald's",46.73
+"74","Diet Coke","Coke","Diet","McDonald's",45.18
+"75","Diet Coke","Coke","Diet","McDonald's",47.79
+"76","Diet Coke","Coke","Diet","McDs",43.93
+"77","Diet Coke","Coke","Diet","McDonald's",47.77
+"78","Diet Coke","Coke","Diet","McDonald's",39.34
+"79","Diet Coke","Coke","Diet","McDonald's",49.65
+"80","Diet Coke","Coke","Diet","McDonald's",46.55
+"81","Diet Coke","Coke","Diet","Burger King",44.76
+"82","Diet Coke","Coke","Diet","Burger King",48.7
+"83","Diet Coke","Coke","Diet","Burger King",47.95
+"84","Diet Coke","Coke","Diet","Burger King",51.2
+"85","Diet Coke","Coke","Diet","Burger King",46.21
+"86","Diet Coke","Coke","Diet","Burger King",42.05
+"87","Diet Coke","Coke","Diet","Burger King",48.06
+"88","Diet Coke","Coke","Diet","Burger King",47.26
+"89","Diet Coke","Coke","Diet","Burger King",48.97
+"90","Diet Coke","Coke","Diet","Burger King",46.85
+"91","Diet Coke","Coke","Diet","Hardees",48.35
+"92","Diet Coke","Coke","Diet","Hardee's",49.71
+"93","Diet Coke","Coke","Diet","Hardee's",49.64
+"94","Diet Coke","Coke","Diet","Hardee's",46.65
+"95","Diet Coke","Coke","Diet","Hardee's",49.31
+"96","Diet Coke","Coke","Diet","Hardee's",47.49
+"97","Diet Coke","Coke","Diet","Hardee's",49.37
+"98","Diet Coke","Coke","Diet","Hardee's",46.85
+"99","Diet Coke","Coke","Diet","Hardee's",45.77
+"100","Diet Coke","Coke","Diet","Hardee's",47.87
+"101","Pepsi","Pepsi","Regular","Arby's",37.49
+"102","Pepsi","Pepsi","Regular","Arby's",38.75
+"103","Pepsi","Pepsi","Regular","Arby's",40.45
+"104","Pepsi","Pepsi","Regular","Arby's",41.05
+"105","Pepsi","Pepsi","Regular","Arby's",40.04
+"106","Pepsi","Pepsi","Regular","Arbys",36.63
+"107","Pepsi","Pepsi","Regular","Arby's",39.8
+"108","Pepsi","Pepsi","Regular","Arby's",41.24
+"109","Pepsi","Pepsi","Regular","Arby's",38.72
+"110","Pepsi","Pepsi","Regular","Arby's",38.82
+"111","Pepsi","Pepsi","Regular","Subway",34.3
+"112","Pepsi","Pepsi","Regular","Subway",43.52
+"113","Pepsi","Pepsi","Regular","Subway",41.4
+"114","Pepsi","Pepsi","Regular","Subway",36.32
+"115","Pepsi","Pepsi","Regular","Subway",39.5
+"116","Pepsi","Pepsi","Regular","Subway",36.19
+"117","Pepsi","Pepsi","Regular","Subway",39.13
+"118","Pepsi","Pepsi","Regular","Subway",42.18
+"119","Pepsi","Pepsi","Regular","Subway",34.61
+"120","Pepsi","Pepsi","Regular","Subway",43.86
+"121","Pepsi","Pepsi","Regular","Sub way",37.21
+"122","Pepsi","Pepsi","Regular","Sub way",35.08
+"123","Pepsi","Pepsi","Regular","Sub way",40.47
+"124","Pepsi","Pepsi","Regular","Sub way",34.01
+"125","Pepsi","Pepsi","Regular","Sub way",36.32
+"126","Pepsi","Pepsi","Regular","Sub way",41.36
+"127","Pepsi","Pepsi","Regular","Sub way",37.44
+"128","Pepsi","Pepsi","Regular","Sub way",39.93
+"129","Pepsi","Pepsi","Regular","Sub way",42.86
+"130","Pepsi","Pepsi","Regular","Sub way",36.31
+"131","Pepsi","Pepsi","Regular","KFC",42.28
+"132","Pepsi","Pepsi","Regular","KFC",33.24
+"133","Pepsi","Pepsi","Regular","KFC",39.01
+"134","Pepsi","Pepsi","Regular","KFC",42.16
+"135","Pepsi","Pepsi","Regular","KFC",39.66
+"136","Pepsi","Pepsi","Regular","KFC",36.54
+"137","Pepsi","Pepsi","Regular","KFC",37.82
+"138","Pepsi","Pepsi","Regular","KFC",38.6
+"139","Pepsi","Pepsi","Regular","KFC",34.27
+"140","Pepsi","Pepsi","Regular","KFC",36.43
+"141","Pepsi","Pepsi","Regular","Pizza Hut",37.85
+"142","Pepsi","Pepsi","Regular","Pizza Hut",36.79
+"143","Pepsi","Pepsi","Regular","Pizza Hut",38.88
+"144","Pepsi","Pepsi","Regular","Pizza Hut",35.66
+"145","Pepsi","Pepsi","Regular","Pizza Hut",37.97
+"146","Pepsi","Pepsi","Regular","Pizza Hut",34.88
+"147","Pepsi","Pepsi","Regular","Pizza Hut",36.8
+"148","Pepsi","Pepsi","Regular","Pizza Hut",36.22
+"149","Pepsi","Pepsi","Regular","Pizza Hut",38.47
+"150","Pepsi","Pepsi","Regular","Pizza Hut",33.46
+"151","Pepsi","Pepsi","Regular","Taco Bell",36.14
+"152","Pepsi","Pepsi","Regular","Taco Bell",34.26
+"153","Pepsi","Pepsi","Regular","Taco Bell",35.01
+"154","Pepsi","Pepsi","Regular","Taco Bell",33.23
+"155","Pepsi","Pepsi","Regular","Taco Bell",39.32
+"156","Pepsi","Pepsi","Regular","Taco Bell",40.35
+"157","Pepsi","Pepsi","Regular","Taco Bell",32.61
+"158","Pepsi","Pepsi","Regular","Taco Bell",37.1
+"159","Pepsi","Pepsi","Regular","Taco Bell",32.73
+"160","Pepsi","Pepsi","Regular","Taco Bell",34.26
+"161","Pepsi","Pepsi","Regular","Wendy's",33.79
+"162","Pepsi","Pepsi","Regular","Wendy's",35.68
+"163","Pepsi","Pepsi","Regular","Wendy's",34.15
+"164","Pepsi","Pepsi","Regular","Wendy's",33.57
+"165","Pepsi","Pepsi","Regular","Wendy's",35.74
+"166","Pepsi","Pepsi","Regular","Wendy's",34.46
+"167","Pepsi","Pepsi","Regular","Wendy's",39.01
+"168","Pepsi","Pepsi","Regular","Wendy's",34.36
+"169","Pepsi","Pepsi","Regular","Wendys",35.88
+"170","Pepsi","Pepsi","Regular","Wendy's",34.38
+"171","Diet Pepsi","Pepsi","Diet","Arby's",32.79
+"172","Diet Pepsi","Pepsi","Diet","Arbys",35.03
+"173","Diet Pepsi","Pepsi","Diet","Arby's",32.83
+"174","Diet Pepsi","Pepsi","Diet","Arby's",31.78
+"175","Diet Pepsi","Pepsi","Diet","Arby's",35.54
+"176","Diet Pepsi","Pepsi","Diet","Arby's",33.69
+"177","Diet Pepsi","Pepsi","Diet","Arby's",36.92
+"178","Diet Pepsi","Pepsi","Diet","Arby's",33.57
+"179","Diet Pepsi","Pepsi","Diet","Arby's",30.83
+"180","Diet Pepsi","Pepsi","Diet","Arby's",34.02
+"181","Diet Pepsi","Pepsi","Diet","Subway",50.74
+"182","Diet Pepsi","Pepsi","Diet","Subway",39.39
+"183","Diet Pepsi","Pepsi","Diet","Subway",44.21
+"184","Diet Pepsi","Pepsi","Diet","Subway",50.82
+"185","Diet Pepsi","Pepsi","Diet","Subway",37.49
+"186","Diet Pepsi","Pepsi","Diet","Subway",48.98
+"187","Diet Pepsi","Pepsi","Diet","Subway",39.87
+"188","Diet Pepsi","Pepsi","Diet","Subway",36.51
+"189","Diet Pepsi","Pepsi","Diet","Subway",48.27
+"190","Diet Pepsi","Pepsi","Diet","Subway",44.71
+"191","Diet Pepsi","Pepsi","Diet","Sub way",45.19
+"192","Diet Pepsi","Pepsi","Diet","Sub way",35.54
+"193","Diet Pepsi","Pepsi","Diet","Sub way",41.5
+"194","Diet Pepsi","Pepsi","Diet","Sub way",52.54
+"195","Diet Pepsi","Pepsi","Diet","Sub way",36.1
+"196","Diet Pepsi","Pepsi","Diet","Sub way",39.59
+"197","Diet Pepsi","Pepsi","Diet","Sub way",44.5
+"198","Diet Pepsi","Pepsi","Diet","Sub way",34.54
+"199","Diet Pepsi","Pepsi","Diet","Sub way",31.18
+"200","Diet Pepsi","Pepsi","Diet","Sub way",29.32
+"201","Diet Pepsi","Pepsi","Diet","KFC",35.69
+"202","Diet Pepsi","Pepsi","Diet","KFC",32.97
+"203","Diet Pepsi","Pepsi","Diet","KFC",36.1
+"204","Diet Pepsi","Pepsi","Diet","KFC",33.44
+"205","Diet Pepsi","Pepsi","Diet","KFC",32.08
+"206","Diet Pepsi","Pepsi","Diet","KFC",34.83
+"207","Diet Pepsi","Pepsi","Diet","KFC",37.6
+"208","Diet Pepsi","Pepsi","Diet","KFC",32.12
+"209","Diet Pepsi","Pepsi","Diet","KFC",35.39
+"210","Diet Pepsi","Pepsi","Diet","KFC",31.78
+"211","Diet Pepsi","Pepsi","Diet","Pizza Hut",40.25
+"212","Diet Pepsi","Pepsi","Diet","Pizza Hut",40.07
+"213","Diet Pepsi","Pepsi","Diet","Pizza Hut",40.1
+"214","Diet Pepsi","Pepsi","Diet","Pizza Hut",38.27
+"215","Diet Pepsi","Pepsi","Diet","Pizza Hut",40.11
+"216","Diet Pepsi","Pepsi","Diet","Pizza Hut",38.32
+"217","Diet Pepsi","Pepsi","Diet","Pizza Hut",39.07
+"218","Diet Pepsi","Pepsi","Diet","Pizza Hut",41.06
+"219","Diet Pepsi","Pepsi","Diet","Pizza Hut",38.56
+"220","Diet Pepsi","Pepsi","Diet","Pizza Hut",37.19
+"221","Diet Pepsi","Pepsi","Diet","Taco Bell",35.53
+"222","Diet Pepsi","Pepsi","Diet","Taco Bell",33.85
+"223","Diet Pepsi","Pepsi","Diet","Taco Bell",32.98
+"224","Diet Pepsi","Pepsi","Diet","Taco Bell",29.24
+"225","Diet Pepsi","Pepsi","Diet","Taco Bell",31.87
+"226","Diet Pepsi","Pepsi","Diet","Taco Bell",31.86
+"227","Diet Pepsi","Pepsi","Diet","Taco Bell",32.24
+"228","Diet Pepsi","Pepsi","Diet","Taco Bell",33.11
+"229","Diet Pepsi","Pepsi","Diet","Taco Bell",32.05
+"230","Diet Pepsi","Pepsi","Diet","Taco Bell",34.27
+"231","Diet Pepsi","Pepsi","Diet","Wendys",39.82
+"232","Diet Pepsi","Pepsi","Diet","Wendy's",38.06
+"233","Diet Pepsi","Pepsi","Diet","Wendy's",39.13
+"234","Diet Pepsi","Pepsi","Diet","Wendy's",33.11
+"235","Diet Pepsi","Pepsi","Diet","Wendy's",36.85
+"236","Diet Pepsi","Pepsi","Diet","Wendy's",35.64
+"237","Diet Pepsi","Pepsi","Diet","Wendy's",39.09
+"238","Diet Pepsi","Pepsi","Diet","Wendy's",39.85
+"239","Diet Pepsi","Pepsi","Diet","Wendy's",34.87
+"240","Diet Pepsi","Pepsi","Diet","Wendy's",38.57

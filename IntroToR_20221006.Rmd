@@ -1,0 +1,1156 @@
+---
+title: "CSDE Workshop: Introduction to R"
+author: "Jessica Godwin"
+date: "October 6, 2022"
+output: 
+ html_document:
+   toc: true
+---
+
+```{r setup, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_knit$set(root.dir = '~/Dropbox/Workshops/IntroR/')
+```
+
+# Getting started 
+## Download R
+
+What is `R`? Open-source, free, stastical computing software.
+
+Go to the [R website](https://cran.r-project.org/), and download the appropriate software for your operating system.
+
+![](R1.png)
+
+## Download RStudio
+
+What is Rstudio? A nice GUI (graphical user interface) for writing code, analyzing data and building packages with `R`.
+
+Go to the [RStudio website](https://rstudio.com/products/rstudio/download/#download). and download the appropriate software for your operating system.
+
+![](Rstudio.png)
+
+## Rstudio Layout
+
+Rstudio has four main panels that allow you to organize your code and have a better user experience developing and using `R` code: 
+
+  * Source panel: where scripts are edited
+  * Console panel: where code is executed and output is printed
+  * Environment panel: where objects are stored
+  * Files/Plots/Help: navigate files and folders, view plots, read and access help documentation for packages and functions
+
+![](RstudioPanel.png)
+
+
+
+# R as a calculator
+
+Open a new .R script by clicking File $\rightarrow$ New File $\rightarrow$ R Script. We can execute code by highlighting it in a source file and clicking the run button.\
+![](script.png)
+
+We can also execute code by typing it directly into the console and pressing enter.
+![](Console.png)
+
+We can do basic mathematical computations using +,-, *, /, and ().\
+
+Note: `pi` is hard coded into `R`.\
+
+```{r, eval = T, echo = T}
+2+3
+6*7
+pi*1  
+6*3/2-3
+6*3/(2-3)
+1/0
+```
+
+Try some on your own!\
+
+What about more complicated functions like exsponents, square roots, trig functions and the natural logarithm?\
+
+```{r, echo = T, eval = T}
+3^2
+2^(3+2)
+sqrt(9)
+sin(2*pi)
+log(1000)  
+exp(6.907755)   
+```
+
+Note: \texttt{log()} computes the natural logarithm. See \texttt{?log} to compute a logarithm with a different base.\
+
+# Documentation
+One convenient feature in \texttt{R} is the documenation for all functions. If you want to learn more about a function and its arguments you can simply type a question mark in front of the function name or use the \texttt{help()} function.
+```{r, echo = T, eval = F}
+?log
+help("log")
+```
+
+**Question**
+According to the above help files, what function (or functions) would you need to use for a base 10 logarithm?
+
+There are a few other functions that can help you understand how to use functions or recall their arguments.
+
+```{r, echo = T, eval = F}
+help.search("log")
+args(log)
+```
+
+# Objects in R
+Numbers, formulas, and other statistical information can be stored as objects in R.  \
+
+Objects are given names and then are stored in the working environment. Once they are stored, the information remainds "hidden" until referenced again. If you are using RStudio the object names can be seen in the Environment module.\
+
+Notes:
+
+  *  Object names are case-sensitive
+  *  Object names should be meaningful and short (``best practice'')
+  *  `<-` is most common, but `=` is acceptable
+
+
+```{r, eval = T, echo = T}
+x <- 2 #Creates the object "x"
+x    #Shows the contents of object "x"
+
+y = 3.5
+y
+
+h <- "practice"   #You can also put strings in an object
+h
+```
+
+Objects can be numbers, strings, matrices, or even more complicated `R` objects.\
+Examples of `R` object types:
+
+  *  the computing basics: integer, numeric, vector, matrix, list
+  *  data.frame
+  *  factor
+  *  lm object (linear model object)
+  *  formula
+
+
+There are handy functions for seeing whether or not an object is of a certain type. These functions are usually important for debugging and making sure you are inputing the proper object type into a function argument.
+
+```{r, echo = T, eval = T}
+is.integer(y)
+is.numeric(y)
+is.character(h)
+is.matrix(x)
+```
+
+The function \texttt{ls()} will list all of the objects that have been created:
+```{r, echo = T, eval = T}
+ls()
+```
+
+Here we see we have in our environment the objects we created \texttt{x, y, h}. If we assign a new value to \texttt{x} it will overwrite what is already stored in that object
+
+```{r}
+x     #Original object that we created above.
+x <- 7  #New object with same name
+x     #New object
+```
+
+# R Markdown
+
+Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>. RMarkdown is a nice program within RStudio that allows us to typset documents and incorporate code and output. This is helpful for writing labs for you all to follow along with, but also to create reproducible and replicable research. It allows you to avoid writing scripts to produce all your output and then copy and pasting that output into a word processing software which may induce unnecessary errors in your work.
+
+Go to File $\rightarrow$ New File $\rightarrow$ R Markdown. Select `Knit to HTML`
+
+![](KnitToHtml.png)
+
+It will open up a new template .Rmd file for you to begin editing that will look like this:\
+
+![](NewRmd.png)
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r}
+data(cars)
+summary(cars)
+```
+
+
+A handy Rstudio/R Markdown cheatsheet can be found here <https://rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf>. It gives summaries of the most used Markdown syntax aspects (e.g. headings/subheadings, bullet lists, numbered lists), the types of files R Markdown can create and examples of how R and R Markdown interact.
+
+This is an example of an an R Markdown file that will be used to create a .html file. This is the best option if you don't have much math to write or do not need to share a .pdf.
+
+## Why use R Markdown?
+
+* Reproducibility: the results in the final come directly from the code include in the file
+* Replicability: a collaborator or another researcher or student can directly replicate your analysis using the code in the chunks and there is room for much more commentary than in a regular script file.
+* Debugging: every time you knit a .Rmd file, it executes the code from start to finish in a clean environment. it will not compile if there are errors in the \tt{R} code, the Markdown syntax or, if we are making a .pdf, the \LaTeX code.
+
+## Chunks
+
+While not nicely named, R code can be included in an R Markdown file in what we call a "chunk". Properties of the chunk are adjusted within the curly braces. The cheatsheet under the heading "Embed code with knitr syntax". The most common arguments I use are
+
+
+
+  *  `echo`: logical argument determining whether the code in the subsequent chunk will be printed in the document created
+  *  `eval`: logical argument determining whether or not the code in the subsequent chunk will be evaluated by `{R}$ or just printed in the document.
+  *  `fig.cap`: provides a caption for a figure
+  *  `fig.align`: aligns figure on "left", "right" or "center"
+
+
+
+```{r pressure, echo=FALSE, fig.align = 'center', fig.cap = "For example, this figure was created with `echo = FALSE` and `eval = TRUE`."}
+plot(pressure)
+```
+
+Chunks allow you to break up your code into smaller pieces that a reader can understand. It's great for writing reports/homeworks so that you can include code immediately followed by its output.\
+
+## `purl()`
+
+You can use the function `purl()` on a .Rmd document and it will create a new `.R` file with only the R code in the chunks. Copy and paste the following code line by line into your document to create a document called `IntroToR_20221006.R` containing only the `R` code in this document.
+
+```{r, eval = F}
+install.packages('knitr', dependencies = T)
+library(knitr)
+purl('IntroToR_20221006.Rmd')
+```
+
+## Formatting
+
+All of this is available on the cheat sheet, but here we will briefly cover basic text and document formatting.
+
+### Bold/Italics
+Use asterisks (`*`) around a word or phrase to make it *italicized*.
+
+Use double asterisks (`**`) around a word or phrase to make it **bold**.
+
+In R Markdown, these formatting tools will create highlighted text.
+
+### Math mode
+
+If you want to write equations you can use (`\$`) like in \LaTeX.
+
+Wrap an equation in a single `\$` to write an equation in "math mode": $y = x$.
+
+Wrap an equation in double dollar signs (`\$\$`) to make an equation block in math mode: $$ y = x $$.
+
+In a .pdf file you can also include raw \LaTeX code, and use and equation or align environment:
+
+\begin{equation}
+y = x.
+\end{equation}
+
+
+# Vectors in `R`
+
+Vectors are a specific type of object (in the first lab we discussed object types of integer, numeric, character and logical) with dimension $n\times1$, e.g. a place to store $n$ observations of a single variable. Vector elements are indexed by positive integers.  Many mathematical functions in `R` are "vectorized", i.e. we can perform operations on every element of a vector at the same time (e.g. add 3 to each element of a vector.) Other functions can aggregate members of the vector (e.g. give the mean of the vector.)\
+
+### `rep()`
+
+We can create a vector with repeated numbers.
+```{r}
+help(rep)
+
+z <- rep(1,5)
+z
+
+q <- rep(c(1, 2), 5)
+q
+
+t <- rep(c(1,2), c(5, 5))
+t
+```
+
+### `seq()`
+We can create a vector with a sequence of numbers.
+```{r}
+help(seq)
+
+a <- 1:5
+a
+
+b <- seq(1,5)
+b
+
+c <- seq(5,1)
+c
+
+d <- seq(from=0, to=15, by=3)
+d
+
+e <- seq(0, 15, 3)
+e
+```
+
+
+### `c()`
+To create a vector with specific numbers or objects inside, we need to use the c() function:
+```{r, echo = T, eval = F}
+f <- (0, 5, 10)  #This doesn't work
+```
+```{r}
+f <- c(0, 5, 10) #This works!!!
+f
+```
+
+### `rnorm()`
+We can also create a vector from randomly generated numbers. Let's draw 10 random numbers drawn from the standard normal distribution (mean of 0, standard deviation of 1). Note: you can draw from any normal distribution of your choosing by changing the `mean=} and `sd=} arguments.
+```{r}
+g <- rnorm(10, mean=0, sd=1)
+g
+```
+
+Sometimes you will want to clear every object you've stored in your environment. This is done using the `rm()` function.
+
+```{r}
+rm(list=ls())
+```
+
+## Subsetting Vectors
+
+Sometimes we will need to access only certain elements of a vector. Let's create a new vector `x` that we will work with to subset:
+
+```{r}
+x <- seq(60, 70, 1)
+x
+```
+
+Often subsetting in `R` involves using brackets [ ].
+```{r}
+x[1]
+x[2]
+```
+
+**Question**
+
+What will the following code do?
+```{r, eval= F, echo = T}
+x[c(1, 3)]
+x[c(2, 3, 6)]
+x[c(6, 3, 2)]
+```
+
+Often we will use Boolean logical operators in subsetting.
+
+Some operators:
+
+ * == : equal to
+ * $\leq$ : less than
+ * $\geq$ : greater than
+ * \&, \&\& : and
+ * $\vert$, $\vert \vert$ : or
+
+
+```{r}
+x<60
+x<65
+```
+
+Note: without using [ ], `R` simply returns a vector of class logical containing elements of either `TRUE` or `FALSE`.
+
+```{r}
+x[x < 65]
+x > 60 & x < 65
+x[x > 60 & x < 65]
+x[x < 60 | x > 65]
+x[x == 60]
+```
+
+## Some more helpful vector functions
+
+Finding the length of a vector.
+
+```{r}
+n = length(x)
+n    
+```
+
+What would the following code do?
+```{r, eval = F}
+x[1:length(x)]
+x[3:length(x)]
+
+x[1:n]
+x[3:n]
+```
+
+Is an object a vector?
+
+```{r}
+is.vector(x)
+```
+
+Let's convert an object to a vector. Note: for every class of object that has an "is" function, there is also an "as" function.
+
+```{r}
+vec.x2<-as.vector(x)
+is.vector(vec.x2)
+```
+
+Many of `R`'s statistics functions take vectors as arguments.
+
+```{r}
+mean(x)
+sd(x)
+```
+
+# Matrices in `R`
+There are many ways to use the `matrix()` function to create a matrix.
+
+```{r}
+?matrix
+x <- matrix(1:12, nrow=3)
+x
+```
+
+Alternatively:
+```{r}
+y <- matrix(1:12, ncol=4)
+y
+```
+
+Alternatively, we can coerce a vector into a matrix:
+```{r}
+z <- 1:10
+matrix.z <- matrix(z, ncol=5)
+matrix.z
+```
+
+Let's create a matrix of zeroes and add 1's to the diagonal.
+```{r}
+matrix.zero <- matrix(0, nrow=5, ncol=5)
+matrix.zero
+
+diag(matrix.zero) = 1
+matrix.zero
+```
+
+Similarly to finding the length of a vector, we often want to find the dimensions of a matrix
+
+```{r}
+dim(x)
+```
+
+## Subsetting a matrix
+
+To isolate or look at parts of a matrix we will still use brackets [ ], but now we have two dimensions.
+
+```{r,}
+z <- 1:30
+matrix.z <- matrix(z, ncol=5)
+matrix.z
+
+#Display only the fifth row of matrix.a
+matrix.z[5, ]  
+
+#Display only the third column
+matrix.z[ , 3] 
+
+#Display the third and fourth columns
+matrix.z[ , 3:4]
+
+#Display the second and fourth columns
+matrix.z[ , c(2,4)]
+
+#Display the first and fifth rows
+matrix.z[c(1,5), ]
+
+#Change the value/s of an element or elements in the matrix
+#Change all of column 1 to zeros
+matrix.z[ , 1] = 0
+matrix.z
+
+#Change all of column 3 to 50
+matrix.z[3, ] = 50
+matrix.z
+
+#Change row 1, column 4 to 999
+matrix.z[1, 4] = 999
+matrix.z
+```
+
+We can also create a new matrix by combining columns or rows from a pre-existing matrix.  The command cbind combines columns, and the command rbind combines rows.\
+
+Note: You need to have the same number of columns to use cbind, and rows to use rbind.
+
+```{r}
+
+matrix.a <- matrix(1:25, nrow=5)
+matrix.a
+
+matrix.b <- matrix(50:74, nrow=5)
+matrix.b
+
+#Combine matrix a and b by column.
+matrix.c <- cbind(matrix.a, matrix.b)
+matrix.c
+
+#Combine matrix a and b by row.
+matrix.d <- rbind(matrix.a, matrix.b)
+matrix.d
+
+#Combine column 1 in matrix a with column 1 of matrix b.
+matrix.col1 <- cbind(matrix.a[,c(1)],
+                     matrix.b[,c(1)])
+matrix.col1
+
+#Combine row 5 in matrix a with row 3 in matrix b.
+matrix.row <- rbind(matrix.a[c(5),], 
+                    matrix.b[c(3),])
+matrix.row
+```
+
+## Mathematical operations using matrices
+
+First we will go over addition and subtraction. Recall, we can only add and subtract matrices with the same number of dimensions.
+
+```{r}
+matrix.a <- matrix(1, ncol=5, nrow=5)
+matrix.a
+
+matrix.b <- matrix(5, ncol=5, nrow=5)
+matrix.b
+
+matrix.a - matrix.b
+matrix.b - matrix.a
+matrix.a + matrix.b
+```
+### Matrix multiplication
+To multiply matrices we need the left matrix to have the same number of columns as the number of rows in the right matrix. Instead of \* we use \%*\% to multiply matrices.\
+
+Take note of what happens when we try to do the following operations:
+
+ * $CD$: `matrix.c \%*\% matrix.d`
+ * $DC$: `matrix.d \%*\% matrix.c`
+
+
+```{r}
+matrix.c <- matrix(3, ncol=4, nrow=5)
+matrix.c
+
+dim(matrix.c)
+
+matrix.d <- matrix(7, ncol=5, nrow=3)
+matrix.d
+
+dim(matrix.d)
+```
+```{r, eval = F}
+
+matrix.c %*% matrix.d 
+
+matrix.d %*% matrix.c
+```
+
+# Practice 1: Vectors \& Matrices
+
+  *  Create a vector with the numbers 0-20 sequenced by 5.  What is the length of the vector? 
+  *  Create a vector that draws 20 random numbers from a normal distribution with a mean of 0 and a standard deviation of 1. Is the mean of this vector zero?
+  *  Create a matrix that includes the numbers 1-6, with the following dimensions: $2 \times 3$.  What number is in the first row, second column?
+  *  Create another matrix (give it a different name) that includes the numbers 1-6 with the following dimensions: $3 \times 2$
+  *  Before multiplying these matrices in R, multiply these matrices by hand on paper.  What will be the dimensions of the results matrix?  
+  *  Use R to multiply the matrices that you created in a) and b) and check your results.  
+
+# Reading and Writing Files
+
+## The Working Directory
+To open files in `R` we need to specify the directory our datafiles are stored in. There are two ways to do this: using code or via the dropdown menus (this will vary by Windows or Mac).
+
+```{r, eval = F}
+setwd("~/Dropbox/Workshops/IntroR/")
+```
+
+To set the working directory in your .Rmd document, you will need to include the following line of code:
+```{r, eval = F}
+knitr::opts_knit$set(root.dir = "~/Dropbox/Workshops/IntroR/")
+```
+
+There are many ways to read in files to `R`, depending on the file type.
+
+## Read and Write .csv
+
+```{r read_csv} 
+?read.csv
+data <- read.csv("Seattle_Pet_Licenses.csv")
+write.csv(data, file = 'Seattle_Pets_copy.csv',
+          row.names = F)
+```
+
+## Read and write R data files, .rda
+
+```{r save_rda}
+data_copy <- data
+names(data_copy)
+
+## Remove periods from names
+## The \\ is called an "escape"
+## So that R recognizes the period
+names(data_copy) <- gsub("\\.", "", names(data_copy))
+save(data_copy, file = 'SeattlePets.rda') 
+rm(data_copy) 
+```
+
+What is the name of the data set that loaded by the line of code below?
+
+```{r load_rda}
+load('SeattlePets.rda') 
+```
+
+## Stata files, .dta
+
+To load Stata data files we either need to use the package `foreign` or `haven`.
+```{r read_haven}
+library(haven)
+write_dta(data_copy, path = "SeattlePets.dta") #Save as a stata data frame
+rm(data_copy)
+
+data_copy <- read_dta(file = "SeattlePets.dta")
+```
+
+Recall if you have not installed the `haven` package you can do so using the following line of code.
+```{r, eval = F}
+install.packages("haven", dependencies = T)
+```
+
+## Other file types
+
+Try Google-ing! Chances are there's a package for the file type of your choice. I've loaded ASCII files, .txt, .xls, .xlsx files among others.
+
+# `data.frame` and `tibble`
+
+A `data.frame` is a type of `R` object used for storing vectors of information who are of different classes, i.e. one column can be numeric, another can be a character, another can be a factor. The `tibble` is a newer object class akin to a `data.frame` in the `tidyverse`. Both are actually special classes of `list`s.
+
+Let's go through some commands for exploring and viewing data frames.
+
+Test whether an object is a `data.frame` object or a `tibble` object.
+
+```{r}
+is.data.frame(data)  
+is.data.frame(data_copy)
+rm(data_copy)
+
+library(tidyr)
+library(dplyr)
+data_tib <- as_tibble(data)
+```
+
+View first 6 rows.
+```{r head}
+head(data)
+head(data_tib)
+```
+
+View variable names.
+```{r}
+# VARIABLE NAMES
+names(data)
+colnames(data)
+```
+View row names, which default to row numbers.
+```{r, eval = F}
+rownames(data)
+```
+
+Find dimensions.
+```{r}
+dim(data) # this gives rows and then columns (n X p)
+nrow(data)
+ncol(data)
+length(data) # NOT ADVISED TO USE WITH MATRICES OR DATA FRAMES
+```
+
+# Data Manipulation
+Like we did with vectors and matrices, we may want to select or view partial data frames.
+
+
+Whether you go down the base `R` or `tidyr`/`dplyr` path is up to you, but I want you to have some familiarity with both.
+
+
+  * Vignette base `R` vs `tidyverse`: \url{https://tavareshugo.github.io/data_carpentry_extras/base-r_tidyverse_equivalents/base-r_tidyverse_equivalents.html}
+  * `tidyr`, `dplyr` cheat sheet: https://rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf
+
+### Selecting variables
+
+In base `R`, we select a column in one of two ways
+```{r, echo = T, eval = F}
+data$Species
+data[ , c("Species")]
+```
+
+In the Hadleyverse we use the `select` function:
+
+```{r, echo = T, eval = F}
+select(data, Species)
+```
+### Subsetting data
+In base `R`, we subset data using Boolean logic tests. Here is a new `data.frame` of all the observations whose species is ``Cat''.
+
+```{r, echo = T, eval = T}
+head(data)
+table(data$Species)
+
+cat.base <- data[data$Species == "Cat", ]
+dim(cat.base)
+head(cat.base)
+```
+
+In the Hadleyverse one would use the `filter` function.
+
+```{r, echo = T, eval = F}
+cat.tidy <- filter(data, Species == "Cat")
+dim(cat.tidy)
+head(cat.tidy)
+```
+
+We can also use what is called ``the pipeline'' to do the same operation: 
+```{r, echo = T, eval = F}
+cat.tidy2 <- data %>% filter(Species == "Cat" )
+dim(cat.tidy2)
+head(cat.tidy2)
+```
+
+or to do multiple sequential operations. 
+
+Note: you must link the sequential functions by `%>%`. To make your code clean you probably want to use multiple lines, but the `%>%` must come at the end of a line or `R` will end your operation. What happens if you run this chunk of code?
+```{r, echo = T, eval = F}
+data %>% filter(Species == "Cat" ) %>%
+  select(Species)
+
+data %>% filter(Species == "Cat" ) %>%
+  select(Species)
+```
+
+
+### Making a new variable
+
+```{r, echo = T, eval = T}
+caf.data <- read.csv("caffeine.csv", header = T)
+head(data)
+caf.data$CaffKg <- caf.data$Caffeine/1000
+```
+
+```{r, echo = T, eval = F}
+# dplyr
+caf.dplyr <- mutate(caf.data,
+                     CaffKg = Caffeine/1000)
+head(caf.dplyr)
+
+caf.dplyr <- caf.dplyr %>% 
+  mutate(CaffKg = Caffeine/1000)
+
+```
+
+### Summary statistics
+
+```{r, echo = T, eval = T}
+caf.sum.base <- data.frame(CaffMean = mean(caf.data$Caffeine),
+                           CaffSd = sd(caf.data$Caffeine))
+head(caf.sum.base)
+
+# Use the "aggregate" function
+## Column names might have to be changed afterwards
+caf.sum.base <- aggregate(formula = 
+                            Caffeine ~ 1, 
+                           data = caf.data,
+                           FUN = function(x) c(mean = mean(x), sd = sd(x)))
+head(caf.sum.base)
+```
+```{r, echo = T ,eval =F}
+caf.sum.dplyr <- summarise(caf, 
+                            CaffMean = mean(Caffeine),
+                            CaffSD  = sd(Caffeine))
+head(caf.sum.dplyr)
+
+caf.sum.dplyr <- summarise_at(caf, 
+                               .vars = c("Caffeine"), 
+                               .funs = c("mean", "sd"))
+names(caf.sum.dplyr)
+```
+
+### Summary statistics by group
+
+In many cases it's inconsequential whether you use base `R` or the `tidyverse`. Often `tidyr` and `dplyr` functions are a bit faster than `R`, but I find the `summarise`function in the `tidyverse` to be MUCH, MUCH slower than `aggregate` in base `R`.
+```{r, echo = T, eval = T}
+data(mtcars)
+mtcars.sum.by <- aggregate(formula = cbind(mpg, wt) ~ cyl + gear, 
+          data = mtcars, 
+          FUN = function(x){
+            c(mean = mean(x), sd = sd(x))
+          },
+          drop = T)
+mtcars.sum.by
+
+mtcars$total <- 1
+mtcars.sum.by2 <- aggregate(formula = total ~ cyl + gear, 
+          data = mtcars, 
+          FUN = sum, drop = T)
+mtcars.sum.by2
+table(mtcars$cyl, mtcars$gear)
+
+```
+```{r, echo = T, eval = F}
+mtcars.sum.dplyr <- mtcars %>% 
+  group_by(cyl, gear) %>% 
+  summarise(mpg.mean = mean(mpg),
+            mpg.sd = sd(mpg),
+            wt.mean = mean(wt),
+            wt.sd = sd(wt),
+            total = n()) %>% 
+  ungroup()
+mtcars.sum.dplyr
+```
+
+### `summary()`
+The `summary()` function will summarize variables in a data set, based on their class.
+
+```{r}
+summary(data)
+
+min(caf.data$Caffeine)
+max(caf.data$Caffeine)
+mean(caf.data$Caffeine)
+sd(caf.data$Caffeine)
+var(caf.data$Caffeine)
+sqrt(var(caf.data$Caffeine)) # same as the sd
+median(caf.data$Caffeine)
+
+quantile(caf.data$Caffeine,0.5)
+quantile(caf.data$Caffeine,0.25)
+quantile(caf.data$Caffeine,0.75)
+quantile(caf.data$Caffeine,c(0.25,0.5,0.75))
+```
+
+# Plotting in R
+
+Data visualization is a powerful tool for understanding your data and teasing out relationships.  This lab will illustrate how to visualize the distribution of variables as well as associations between variables using base `R` and the `tidyverse` plotting package.
+
+For this lab, we will use two important packages:
+- `dplyr` to manage and manipulate our data
+- `ggplot2` to actually produce the visualizations
+
+To see all of the cool data visualization that you can do in R, visit the R Graph Gallery:
+https://www.r-graph-gallery.com/
+
+```{r, warning = F, message = F}
+#install.packages("ggplot2")
+#install.packages('palmerpenguins')
+library(ggplot2)
+library(dplyr)
+library(palmerpenguins)
+```
+
+The data for this lab can be accessed through a package called `palmerpenguins`, which contains data on penguins' species, island, and body dimensions. This dataset will not actually appear in the global environment when you load the `palmerpenguins` library, but it is still accessible. 
+
+We will start by examining some descriptive statistics for each variable using the `summary()` command.
+
+```{r iris}
+summary(penguins)
+```
+
+## Examining a single variable (univariate plots)
+
+Oftentimes, we want to know how our quantitative variable is distributed in the data.  Histograms provide handy way to do this.  In base `R`, we simply use the `hist()` command.  This is going to give us a very rough looking plot, but it's sufficient for exploratory data analysis (i.e. to get a sense of the typical case, whether and how the data is skewed).
+
+Note that the `echo = FALSE` parameter in the code chunk to prevent printing of the R code that generated the plot.
+
+### Histograms using base `R`
+
+```{r, echo=FALSE}
+hist(penguins$flipper_length_mm)
+```
+
+If we were inclined to present this graph to an audience, we would want to clean it up, including changing titles, axis labels, the size of the "bins", and the color of the bars. For a more extensive list of the colors that you can choose, visit the following website: https://www.nceas.ucsb.edu/sites/default/files/2020-04/colorPaletteCheatsheet.pdf
+
+```{r iris sepal, echo=FALSE, tidy =T}
+hist(penguins$flipper_length_mm,
+     main = "Histogram of Flipper Length (in mm)",   #main title of the graph
+     xlab = "Flipper Length",                #x-axis label (can also use ylab for y-axis label)
+     col = "purple4",                      #change color of the bars
+     breaks = 45)                          #alter the number of bins
+```
+
+**Question**
+What do you notice happened when we changed the bin width in the second histogram?  How might this be important to us as researchers?
+
+### Histograms in `ggplot2`
+
+We can also use `ggplot2` to plot this variable.  "gg" stands for "grammar of graphics"; the `ggplot2` package treats plots as an additive series of characteristics.  The first line generally indicates (a) what dataset you are using and (b) what variable(s) will go into the aesthetics.  Subsequent lines indicate the type of graph to be created (in this case, a histogram), different color attributes of the graph, axis titles and limits, et cetera.  
+
+The code in the first chunk is the simplest possible version of the histogram.
+
+```{r, warning = F, message = F, error = F}
+ggplot(penguins, aes(x = flipper_length_mm)) +
+  geom_histogram()
+```
+
+Again, it is not the most visually pleasing graph, but we can add features easily.
+
+```{r}
+ggplot(penguins, aes(x = flipper_length_mm)) +
+  geom_histogram(fill = "darkgoldenrod", #alter the fill color of the bars
+                 color = "white") +      #alter the outline color of the bars
+  ggtitle("Distribution of Flipper Length") +
+  xlab("Flipper Length") +
+  ylab("Frequency") +
+  theme_minimal()     #changes the background theme.  The default is grey.
+  
+```
+
+### Bar graphs in base `R`
+
+Sometimes we're interested in visualizing a **categorical** variable  In the case of the `penguins` dataset, 
+
+We'll first use base `R` and then `ggplot2` to create the bar plots. In base `R`, you must first convert your data into a table as we have done above.  
+
+```{r}
+#Summarize # of penguins from each 
+#island in a table
+counts <- table(penguins$island)
+
+#Create the plot
+barplot(counts) 
+```
+
+This plot tells you how many observations (a.k.a. penguins) originated from each island.
+
+We can add some bells and whistles to this plot in base `R` as well.
+
+```{r}
+barplot(counts, 
+        main = "Island of Origin",
+        col = "mediumpurple2",
+        ylab = "Frequency")
+```
+
+### Barplots in `ggplot2`
+In `ggplot2`, we will use the `geom_bar()` command. In `ggplot2`, we do not need to tabulate the data prior to plotting, which is handy. 
+
+```{r}
+ggplot(penguins, aes(x = island)) +
+  geom_bar(fill = "darkblue") +
+  xlab("Island of Origin") +
+  ylab("Frequency") +
+  theme_bw()    #note the difference in background with this theme
+```
+
+### Grouped bar plots in `ggplot2`
+
+What if we want to observe the relationship between two categorical variables?  In this case, we will examine the number of penguins of each species originating from each island. We can do so using a **grouped bar plot**. This is particularly straightforward to implement using `ggplot2`, but we will need to use `dplyr` to construct a summary tally of penguins by species and island and use that to make the graph.
+
+```{r}
+#Make a quick summary table of penguins
+#by island:
+species_by_island <- penguins %>%
+  group_by(species, island) %>%
+  tally()
+
+#Graph out the summary table using ggplot2:
+ggplot(species_by_island, aes(x = species, y = n, fill = island)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  xlab("Island of Origin") +
+  ylab("Number of individuals of each species") +
+  theme_bw()    
+```
+
+We can also examine variable averages by group using a similar strategy as above.  This time, we'll look at average flipper length by island.  Again, we need to start by manipulating the data.
+
+```{r}
+#summarize average flipper length by island
+flippers_by_island <- penguins %>%
+  group_by(island) %>%
+  summarize(mean_flipper_length = mean(flipper_length_mm, na.rm = T))
+
+#graph it out:
+ggplot(flippers_by_island, aes(x = island, y = mean_flipper_length, fill = island)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  xlab("Island of Origin") +
+  ylab("Frequency") +
+  theme_bw() + 
+  theme(legend.position = "none")  +  #use this last line to get rid of the legend 
+  scale_fill_manual(values = c("purple4", "darkgoldenrod", "black"))
+```
+
+## Scatterplots in base `R`
+
+To observe relationships between two numeric variables, we use scatterplots (also known as scattergrams).  Say we want to observe the relationship between a penguin's body mass (`body_mass_g`) and the length of its flippers (`flipper_length_mm`).
+
+```{r}
+plot(penguins$body_mass_g, penguins$flipper_length_mm,
+     xlab = "Body mass (in g)",
+     ylab = "Flipper Length (in mm)",
+     frame = FALSE, #removes the boundary that R automatically puts on a scatterplot
+     pch = 19)  #specifies the type of dot
+```
+
+
+```{r}
+plot(penguins$flipper_length_mm,
+     penguins$body_mass_g,
+     xlab = "Flipper length (mm)",
+     ylab = "Body Mass (g)",
+     main = "",
+     pch = 2, col = 'red')
+```
+
+### Saving directly to `.pdf`
+```{r pdf}
+pdf("WeightvsHeight.pdf",
+    height = 4, width = 4)
+plot(penguins$flipper_length_mm,
+     penguins$body_mass_g,
+     xlab = "Flipper length (mm)",
+     ylab = "Body Mass (g)",
+     main = "",
+     pch = 2, col = 'red')
+dev.off()
+```
+
+### Making custom plot limits
+
+```{r plot_lims}
+max(penguins$flipper_length_mm)
+max(penguins$flipper_length_mm, na.rm = TRUE)
+
+xlimits <- c(min(penguins$flipper_length_mm,
+                  na.rm = TRUE)-1,
+              max(penguins$flipper_length_mm,
+                  na.rm = TRUE)+1)
+ylimits <- c(min(penguins$body_mass_g,
+                  na.rm = TRUE)-1,
+              max(penguins$body_mass_g,
+                  na.rm = TRUE)+1)
+
+plot(penguins$flipper_length_mm[penguins$species == "Adelie"],
+     penguins$body_mass_g[penguins$species == "Adelie"],
+     xlim = xlimits,
+     ylim = ylimits,
+     xlab = "Flipper length (mm)",
+     ylab = "Body Mass (g)",
+     pch = 2, col = 'navyblue')
+points(penguins$flipper_length_mm[penguins$species == "Chinstrap"],
+       penguins$body_mass_g[penguins$species == "Chinstrap"],
+       pch = 19, col = 'deeppink',
+       lwd = 2)
+points(penguins$flipper_length_mm[penguins$species == "Gentoo"],
+       penguins$body_mass_g[penguins$species == "Gentoo"],
+       pch = 21, col = 'deepskyblue',
+       bg = alpha('deepskyblue', 0.5))
+legend('topleft', pch = c(2,19,19), 
+       lwd = c(1,2,1), lty = c(NA, NA,NA),
+       col = c("navyblue",
+               "deeppink",
+               alpha("deepskyblue",.5)),
+       legend = c("Adelie",
+                  "Chinstrap",
+                  "Gentoo"), bty = 'n')
+```
+
+### Multi-pane plots in base `R`
+
+```{r par_mfrow}
+par(mfrow = c(1,3))
+plot(penguins$flipper_length_mm[penguins$species == "Adelie"],
+     penguins$body_mass_g[penguins$species == "Adelie"],
+     xlim = xlimits,
+     ylim = ylimits,
+     xlab = "Flipper length (mm)",
+     ylab = "Body Mass (g)",
+     main = "Adelie",
+     pch = 19, col = 'navyblue')
+plot(penguins$flipper_length_mm[penguins$species == "Chinstrap"],
+     penguins$body_mass_g[penguins$species == "Chinstrap"],
+     xlim = xlimits,
+     ylim = ylimits,
+     xlab = "Flipper length (mm)",
+     ylab = "Body Mass (g)",
+     main = "Chinstrap",
+     pch = 19, col = 'deeppink')
+plot(penguins$flipper_length_mm[penguins$species == "Gentoo"],
+     penguins$body_mass_g[penguins$species == "Gentoo"],
+     xlim = xlimits,
+     ylim = ylimits,
+     xlab = "Flipper length (mm)",
+     ylab = "Body Mass (g)",
+     main = 'Gentoo',
+     pch = 19, col = 'deepskyblue')
+```
+
+### Multi-page pdf in base `R` with `for` loops
+
+```{r multi_pdf}
+titles <- c("Adelie", "Chinstrap", "Gentoo")
+colors <- c("navyblue", "deeppink", "deepskyblue")
+
+pdf('MassvsFlipper_species.pdf', height = 4, width = 4)
+for(i in 1:3){
+  par(mfrow = c(1,1))
+  plot(penguins$flipper_length_mm[penguins$species == titles[i]],
+     penguins$body_mass_g[penguins$species == titles[i]],
+     xlim = xlimits,
+     ylim = ylimits,
+     xlab = "Flipper length (mm)",
+     ylab = "Body Mass (g)",
+     main = titles[i],
+     pch = 2, col = colors[i])
+}
+dev.off()
+```
+
+
+## Scatterplots in `ggplot2`
+
+We also might want to add a regression line to our scatterplot. While you can certainly do this in base `R`, the `ggplot2` method is given below.
+
+```{r ggplot_point, warning = F, message = F}
+ggplot(penguins, aes(x = body_mass_g, y = flipper_length_mm)) +
+  geom_point() +
+  xlab("Body Mass (in g)") +
+  ylab("Flipper length (in mm)") +
+  theme_classic() +
+  geom_smooth(method = lm, color = "red", se=FALSE) 
+#lm = linear model
+#se = whether or not to include standard error estimates
+```
+
+### Grouped scatter plots
+
+We can also observe how species might impact the relationship between body mass and flipper length using the grouping method. Here, we assign the dots of each species their own color.  You can also distinguish categories using different levels of shading, different shapes, or even different sizes of points (https://www.r-graph-gallery.com/274-map-a-variable-to-ggplot2-scatterplot.html).
+
+```{r, warning = F, message = F}
+ggplot(penguins, aes(x=body_mass_g, y=flipper_length_mm, color=species)) + 
+    geom_point(size=6) +
+    theme_minimal() +
+  scale_color_manual(values = c("purple4", "darkgoldenrod", "black")) +
+  xlab("Body mass (in g)") + 
+  ylab("Flipper length (in mm)")
+```
+
+This plot gives us a new perspective on the data: we see that the relationship between body mass and flipper length is quite different for the Gentoo species, as compared with the Adelie and Chinstrap species.  
+
+
+
+### `facet_wrap`
+
+```{r, warning = F, message = F}
+penguins %>% 
+  ggplot(aes(x=body_mass_g, y=flipper_length_mm, color = species)) + 
+  geom_point(size=2) +
+  facet_wrap(~species) +
+  theme_minimal() +
+  guides(color = guide_legend(title = "Species")) +
+  xlab("Body mass (in g)") + 
+  ylab("Flipper length (in mm)")
+```
+
+**Question** What do you think the code below does differently than the previous example?
+```{r, eval = FALSE, warning = F, message = F}
+penguins %>% 
+  ggplot(aes(x=body_mass_g, y=flipper_length_mm)) + 
+  geom_point(size=2) +
+  facet_wrap(~species) +
+  theme_classic() +
+  xlab("Body mass (in g)") + 
+  ylab("Flipper length (in mm)")
+```
+
+# Practice 2: Data manipulation \& Plotting
+
+  1. What is the mean bill height and depth in this dataset?
+  2. If 50mm is long, how many long-billed penguins are in the total dataset?
+  3. Create a new variable in the dataset to represent the ratio of bill length to depth.
+  4. Plot your new variable in a boxplot and change the color of the inside of the boxplot. HINT: see `?boxplot`.
+
